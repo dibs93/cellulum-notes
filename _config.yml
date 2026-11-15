@@ -1,0 +1,14 @@
+title: "Cellulum Notes | Life Sciences Study Hub & Analytical Guides"
+description: "Deep conceptual breakdowns, solved CSIR NET Part C derivations, and biochemical problem-solving guides."
+url: "https://notes.cellulum.in"
+baseurl: ""
+markdown: kramdown
+permalink: /:categories/:title/
+
+# Navigation & Main Observatory Link
+main_observatory_url: "https://cellulum.in"
+textbook_url: "https://cellulum.in/textbook/textbook.html"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
