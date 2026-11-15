@@ -3,7 +3,14 @@ description: "Deep conceptual breakdowns, solved CSIR NET Part C derivations, an
 url: "https://notes.cellulum.in"
 baseurl: ""
 markdown: kramdown
-permalink: /:categories/:title/
+
+# Keep standard .html URLs for pages while giving blog posts clean URLs
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /:categories/:title/
 
 # Navigation & Main Observatory Link
 main_observatory_url: "https://cellulum.in"
