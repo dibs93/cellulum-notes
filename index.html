@@ -4,10 +4,10 @@ title: "Life Sciences Notes, CSIR NET Derivations & Problem Guides"
 ---
 
 <section class="hero-box">
-  <h1>Cellulum Science Notes & Analytical Guides</h1>
-  <p>Step-by-step derivations, biophysical methods, and quantitative problem-solving notes for CSIR NET Life Sciences aspirants. Paired with live tools on the <a href="https://cellulum.in">Cellulum Interactive Observatory</a>.</p>
+  <h1>Cellulum Science Notes &amp; Analytical Guides</h1>
+  <p>Step-by-step derivations, biophysical methods, and quantitative problem-solving notes for CSIR NET Life Sciences aspirants. Paired with live tools on the <a href="https://cellulum.in" target="_blank" rel="noopener noreferrer">Cellulum Interactive Observatory</a>.</p>
   <div style="margin-top: 1.25rem;">
-    <a href="{{ '/resources.html' | relative_url }}" class="btn-primary">📥 Open Solved PYQ & Downloads Vault</a>
+    <a href="{{ '/resources.html' | relative_url }}" class="btn-primary">📥 Open Solved PYQ &amp; Downloads Vault</a>
   </div>
 </section>
 
@@ -15,7 +15,7 @@ title: "Life Sciences Notes, CSIR NET Derivations & Problem Guides"
   {% for post in site.posts %}
     <article class="post-card">
       <div class="post-meta">
-        <span class="post-category">{{ post.category }}</span>
+        <span class="post-category">{{ post.categories | join: ", " }}</span>
         <span>{{ post.date | date: "%B %d, %Y" }}</span>
       </div>
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
