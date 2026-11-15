@@ -4,12 +4,18 @@ layout: default
 <article class="post-article">
   <header class="post-header">
     <div class="post-meta">
-      <span class="post-category">{{ page.category | default: "Life Sciences" }}</span>
+      <span class="post-category">
+        {% if page.categories %}
+          {{ page.categories | join: ", " }}
+        {% else %}
+          {{ page.category | default: "Life Sciences" }}
+        {% endif %}
+      </span>
       <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
     </div>
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 class="post-title">{{ page.title | escape }}</h1>
     {% if page.description %}
-      <p class="post-subtitle">{{ page.description }}</p>
+      <p class="post-subtitle">{{ page.description | escape }}</p>
     {% endif %}
   </header>
 
@@ -27,8 +33,8 @@ layout: default
     <h3>🚀 Practice Live on the Cellulum Observatory</h3>
     <p>Explore interactive simulations, quantitative Schaum's-style derivations, and downloadable CSIR NET solved paper packs.</p>
     <div class="cta-buttons">
-      <a href="{{ site.main_observatory_url }}" class="btn-primary" target="_blank" rel="noopener">Open Interactive Observatory</a>
-      <a href="{{ '/resources.html' | relative_url }}" class="btn-secondary">Download Solved PYQs & Packs</a>
+      <a href="{{ site.main_observatory_url | default: 'https://cellulum.in' }}" class="btn-primary" target="_blank" rel="noopener noreferrer">Open Interactive Observatory</a>
+      <a href="{{ '/resources.html' | relative_url }}" class="btn-secondary">Download Solved PYQs &amp; Packs</a>
     </div>
   </aside>
 </article>
