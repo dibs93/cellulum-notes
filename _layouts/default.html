@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
+  <title>{% if page.title %}{{ page.title | escape }} | {{ site.title | default: "Cellulum Notes" }}{% else %}{{ site.title | default: "Cellulum Notes — CSIR NET Life Sciences Vault" }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  
+
+  <!-- Custom Cellulum Cellular 'C' Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2310b981'/%3E%3Cstop offset='50%25' stop-color='%2306b6d4'/%3E%3Cstop offset='100%25' stop-color='%231d4ed8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 76 25 A 37 37 0 1 0 76 75' fill='none' stroke='url(%23g)' stroke-width='15' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='50' r='13' fill='url(%23g)'/%3E%3Cpath d='M 29 42 A 22 22 0 0 1 39 29' fill='none' stroke='%2314b8a6' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M 55 28 A 22 22 0 0 1 64 33' fill='none' stroke='%2306b6d4' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M 29 58 A 22 22 0 0 0 37 69' fill='none' stroke='%230284c7' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M 54 72 A 22 22 0 0 0 64 67' fill='none' stroke='%231d4ed8' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <style>
+    /* Topmate Buy Me a Chai Header Pill */
+    .site-nav .btn-chai-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff !important;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+    .site-nav .btn-chai-nav:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+      color: #ffffff !important;
+    }
+
+    /* Prevent wide MathJax equations from breaking mobile layout */
+    mjx-container[jax="CHTML"][display="true"] {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 0.25rem 0;
+    }
+  </style>
+
   <!-- MathJax for rendering biochemical & thermodynamic equations -->
   <script>
     MathJax = {
@@ -26,9 +62,12 @@
       </a>
       <nav class="site-nav">
         <a href="{{ '/' | relative_url }}">Articles</a>
-        <a href="{{ '/resources.html' | relative_url }}">PYQ & Bundles</a>
+        <a href="{{ '/resources.html' | relative_url }}">PYQ &amp; Bundles</a>
         <a href="{{ '/about.html' | relative_url }}">About</a>
-        <a href="{{ site.main_observatory_url }}" class="btn-observatory" target="_blank" rel="noopener">
+        <a href="https://topmate.io/cellulum/2410801" class="btn-chai-nav" target="_blank" rel="noopener noreferrer" title="Support Cellulum &amp; Get the 1-Page CSIR NET Formula Sheet PDF">
+          ☕ Buy a Chai
+        </a>
+        <a href="{{ site.main_observatory_url | default: 'https://cellulum.in' }}" class="btn-observatory" target="_blank" rel="noopener noreferrer">
           🔬 Interactive Observatory ↗
         </a>
       </nav>
@@ -44,9 +83,12 @@
       <p>&copy; {{ "now" | date: "%Y" }} Cellulum Notes. Independent Life Sciences Educational Resource.</p>
       <div class="footer-links">
         <a href="{{ '/about.html' | relative_url }}">About Us</a>
+        <a href="{{ '/resources.html' | relative_url }}">Free PYQ Vault</a>
+        <a href="https://cellulum.in/#bundles" target="_blank" rel="noopener noreferrer">Premium Bundles</a>
+        <a href="https://topmate.io/cellulum/2410801" target="_blank" rel="noopener noreferrer">☕ Buy Us a Chai (+ Bonus PDF)</a>
         <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
         <a href="{{ '/contact.html' | relative_url }}">Contact</a>
-        <a href="{{ site.main_observatory_url }}">Cellulum Main Site</a>
+        <a href="{{ site.main_observatory_url | default: 'https://cellulum.in' }}" target="_blank" rel="noopener noreferrer">Cellulum Main Site</a>
       </div>
     </div>
   </footer>
