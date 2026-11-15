@@ -1,42 +1,235 @@
----
-layout: default
-title: "CSIR NET Solved PYQ Downloads & Analytical Bundles"
-description: "Download free solved CSIR NET Life Sciences question papers and Part C numerical practice packs."
----
-<div class="post-article">
-  <h1 class="post-title">Study Resources & Solved PYQ Vault</h1>
-  <p class="post-subtitle">Curated quantitative practice packs, year-wise solved question papers, and interactive study tools for CSIR NET Life Sciences.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Vault — Cellulum Notes (CSIR NET Life Sciences)</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --chai-bg: #fffbeb;
+            --chai-border: #fde68a;
+            --chai-btn: #d97706;
+            --chai-btn-hover: #b45309;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
 
-  <h2>1. Free Question Papers & Reference Sheets</h2>
-  <p>Select a resource card below to view or download the PDF directly from Google Drive:</p>
+        /* Header & Navigation */
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.9rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-weight: 800; font-size: 1.3rem; color: var(--primary); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-  <div class="resource-grid">
-    <div class="resource-card">
-      <div>
-        <span class="resource-tag">Official Archive • PDF</span>
-        <h3>CSIR NET Life Sciences Dec 2025 Paper</h3>
-        <p>Complete exam paper for timed practice and Part B / Part C analytical pattern evaluation.</p>
-      </div>
-      <a href="https://drive.google.com/file/d/14zxWZo2qvEf8vG-ALxaz2a_A4wJTBh_q/view?usp=sharing" class="btn-primary" target="_blank" rel="noopener">📄 View / Download PDF</a>
-    </div>
+        .btn-chai {
+            background-color: var(--chai-btn);
+            color: #ffffff !important;
+            padding: 0.5rem 1.1rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: transform 0.15s ease, background-color 0.2s ease;
+            box-shadow: 0 2px 4px rgba(217, 119, 6, 0.2);
+        }
+        .btn-chai:hover {
+            background-color: var(--chai-btn-hover);
+            transform: translateY(-1px);
+        }
 
-    <div class="resource-card">
-      <div>
-        <span class="resource-tag">Quick Revision • PDF</span>
-        <h3>Answer Key & Reference Sheet</h3>
-        <p>Official shift key and rapid verification sheet for scoring your practice session.</p>
-      </div>
-      <a href="https://drive.google.com/file/d/1qxxyQ2ia57Dsz-2vGRvaaU6CCu9duS3I/view?usp=sharing" class="btn-primary" target="_blank" rel="noopener">📄 View / Download PDF</a>
-    </div>
-  </div>
+        /* Layout & Hero */
+        .container { max-width: 1040px; margin: 2.5rem auto; padding: 0 1.5rem; }
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 2rem 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 0.6rem; color: var(--text-main); }
+        .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto 1.25rem auto; }
+        .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-  <h2>2. Intensive Part C Analytical Master Packs</h2>
-  <p>Need step-by-step solved numerical workbooks covering enzyme kinetics, bioenergetics, genetics mapping, and biophysical techniques?</p>
-  <div class="observatory-cta-box" style="margin-top: 1rem;">
-    <h3>🔬 Explore the Complete Bundles Vault</h3>
-    <p>Access interactive simulations, Schaum's-style derivations, and downloadable master packs on our main platform.</p>
-    <div class="cta-buttons">
-      <a href="https://cellulum.in" class="btn-primary" target="_blank" rel="noopener">Open Cellulum.in Vault →</a>
-    </div>
-  </div>
-</div>
+        /* Resource Grid */
+        .section-title { font-size: 1.4rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem; }
+        .btn-group { display: flex; gap: 0.75rem; }
+        .btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem 0.9rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-primary { background-color: var(--primary); color: #ffffff; }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-outline { border: 1px solid var(--border-color); color: var(--text-main); background: transparent; }
+        .btn-outline:hover { background: #f1f5f9; }
+
+        /* Dedicated Chai Support Banner */
+        .chai-banner {
+            background: var(--chai-bg);
+            border: 1px solid var(--chai-border);
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        .chai-banner-text { flex: 1; min-width: 260px; }
+        .chai-banner-text h3 { font-size: 1.25rem; color: #92400e; margin-bottom: 0.35rem; }
+        .chai-banner-text p { color: #78350f; font-size: 0.95rem; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--card-bg);
+            margin-top: 3rem;
+        }
+        .footer-links { margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .footer-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="https://notes.cellulum.in" class="logo">Cellulum Notes</a>
+        <nav class="nav-links">
+            <a href="https://cellulum.in">Main Hub & Bundles</a>
+            <a href="https://notes.cellulum.in" class="active">Free PYQ Vault</a>
+            <a href="https://topmate.io/cellulum/2410801" class="btn-chai" target="_blank" rel="noopener noreferrer">☕ Buy Us a Chai</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>CSIR NET Life Sciences Free Resource Vault</h1>
+            <p>Open-access previous year solved questions (PYQs), step-by-step biochemical derivations, and quantitative genetics practice sets.</p>
+            <div class="hero-actions">
+                <a href="https://cellulum.in#bundles" class="btn btn-primary" style="flex: 0 1 auto; padding: 0.65rem 1.4rem;">Explore High-Yield Bundles →</a>
+                <a href="https://topmate.io/cellulum/2410801" class="btn-chai" target="_blank" rel="noopener noreferrer">☕ Support & Get Bonus Formula Sheet</a>
+            </div>
+        </section>
+
+        <h2 class="section-title">Free Topic Notes & Solved PYQs</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="badge">Unit 1 • Biochemistry</span>
+                    <h3>Enzyme Kinetics & Thermodynamics</h3>
+                    <p>Step-by-step derivations of Michaelis-Menten equations, inhibition plots, Gibbs free energy, and solved Part C numericals.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-outline">Read Notes</a>
+                    <a href="#" class="btn btn-primary">Download PDF</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="badge">Unit 8 • Genetics</span>
+                    <h3>Linkage Mapping & Pedigree Analysis</h3>
+                    <p>Three-point test cross strategies, recombination frequency shortcuts, probability rules, and CSIR NET solved examples.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-outline">Read Notes</a>
+                    <a href="#" class="btn btn-primary">Download PDF</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="badge">Unit 10 • Ecology</span>
+                    <h3>Population Growth & Diversity Indices</h3>
+                    <p>Logistic and exponential models, Lincoln-Petersen mark-recapture, Shannon diversity index, and life table calculations.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-outline">Read Notes</a>
+                    <a href="#" class="btn btn-primary">Download PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support / Tip Jar Callout -->
+        <section class="chai-banner">
+            <div class="chai-banner-text">
+                <h3>☕ Fuel Cellulum’s Study Guides & Get a Bonus Formula Sheet!</h3>
+                <p>Found these free derivations and PYQ solutions helpful? Buy us a chai via UPI on Topmate and get instant access to our printable <strong>1-Page CSIR NET Quantitative Formula & Equations Cheat Sheet (PDF)</strong>.</p>
+            </div>
+            <a href="https://topmate.io/cellulum/2410801" class="btn-chai" style="padding: 0.75rem 1.4rem; font-size: 0.95rem;" target="_blank" rel="noopener noreferrer">
+                ☕ Buy Us a Chai (Get Bonus PDF)
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Cellulum.in — Free Life Sciences Education & Research Vault.</p>
+        <div class="footer-links">
+            <a href="https://cellulum.in">Cellulum Main Site</a>
+            <a href="https://notes.cellulum.in">Resource Vault</a>
+            <a href="https://topmate.io/cellulum/2410801" target="_blank" rel="noopener noreferrer">☕ Support Us on Topmate</a>
+        </div>
+    </footer>
+
+</body>
+</html>
