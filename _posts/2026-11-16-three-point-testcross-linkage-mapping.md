@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Solving Three-Point Testcross & Gene Mapping Problems in Genetics"
 description: "Master gene order determination, coefficient of coincidence, and interference calculations for CSIR NET Life Sciences Genetics Unit 8."
 date: 2026-11-16 09:30:00 +0530
