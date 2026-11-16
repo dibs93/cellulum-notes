@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Mastering Michaelis-Menten Kinetics & Inhibition Models for CSIR NET Part C"
 description: "A comprehensive guide to enzyme kinetics derivations, Lineweaver-Burk double-reciprocal plots, and competitive versus uncompetitive inhibition models for CSIR NET Life Sciences."
 date: 2026-11-16 08:00:00 +0530
