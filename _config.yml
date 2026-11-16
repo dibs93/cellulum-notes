@@ -15,6 +15,7 @@ defaults:
 # Navigation & Main Observatory Link
 main_observatory_url: "https://cellulum.in"
 textbook_url: "https://cellulum.in/textbook/textbook.html"
+future: true
 
 plugins:
   - jekyll-sitemap
