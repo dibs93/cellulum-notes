@@ -1,22 +1,55 @@
-title: "Cellulum Notes | Life Sciences Study Hub & Analytical Guides"
-description: "Deep conceptual breakdowns, solved CSIR NET Part C derivations, and biochemical problem-solving guides."
+# ==============================================================================
+# Cellulum Notes (notes.cellulum.in) — Jekyll Configuration
+# ==============================================================================
+
+title: "Cellulum Notes"
+tagline: "CSIR NET Life Sciences Derivations, Biophysical Methods & Problem Guides"
+description: "Open-access quantitative life sciences study guides, step-by-step biochemical derivations, and solved CSIR NET Part C analytical problems paired with the Cellulum Interactive Observatory."
+
+# Domain & URL Settings (Required for Canonical Tags & Sitemap Generation)
 url: "https://notes.cellulum.in"
 baseurl: ""
-markdown: kramdown
 
-# Keep standard .html URLs for pages while giving blog posts clean URLs
+# Cross-Site Variabel Used in Header, Footer & Article CTA Boxes
+main_observatory_url: "https://cellulum.in"
+topmate_chai_url: "https://topmate.io/cellulum/2410801"
+
+# Timezone & Publishing Rules (Prevents UTC build lag from hiding new posts)
+timezone: Asia/Kolkata
+future: true
+
+# Markdown & MathJax Compatibility
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# Permalink Structure for Posts
+permalink: /:year/:month/:day/:title.html
+
+# Default Front-Matter Fallbacks
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
-      permalink: /:categories/:title/
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
 
-# Navigation & Main Observatory Link
-main_observatory_url: "https://cellulum.in"
-textbook_url: "https://cellulum.in/textbook/textbook.html"
-future: true
-
+# GitHub Pages Official Plugins (Auto-generates https://notes.cellulum.in/sitemap.xml)
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# Exclude Non-Site Files from Build Output
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
