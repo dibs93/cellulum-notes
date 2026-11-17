@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Vault — Cellulum Notes (CSIR NET Life Sciences)</title>
+    <title>Free PYQ & Derivation Vault — Cellulum Notes (CSIR NET Life Sciences)</title>
+    <meta name="description" content="Open-access CSIR NET Life Sciences solved Part C numericals, step-by-step biochemical derivations, printable PDF study sheets, and interactive pathway simulators.">
+    <link rel="canonical" href="https://notes.cellulum.in/resources.html">
+
+    <!-- GOOGLE ADSENSE CODE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4994243447898228" crossorigin="anonymous"></script>
+
     <style>
         :root {
             --primary: #0284c7;
             --primary-dark: #0369a1;
+            --emerald: #059669;
+            --emerald-light: #d1fae5;
             --bg-color: #f8fafc;
             --card-bg: #ffffff;
             --text-main: #0f172a;
@@ -25,27 +33,29 @@
         header {
             background: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
-            padding: 0.9rem 2rem;
+            padding: 0.9rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
-        .logo { font-weight: 800; font-size: 1.3rem; color: var(--primary); text-decoration: none; letter-spacing: -0.02em; }
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .logo { font-weight: 800; font-size: 1.25rem; color: var(--primary); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: 600; }
 
         .btn-chai {
             background-color: var(--chai-btn);
             color: #ffffff !important;
-            padding: 0.5rem 1.1rem;
+            padding: 0.45rem 1rem;
             border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
@@ -58,60 +68,125 @@
         }
 
         /* Layout & Hero */
-        .container { max-width: 1040px; margin: 2.5rem auto; padding: 0 1.5rem; }
+        .container { max-width: 1080px; margin: 2rem auto; padding: 0 1.25rem; }
         .hero {
             text-align: center;
-            margin-bottom: 2.5rem;
-            padding: 2rem 1rem;
+            margin-bottom: 2.25rem;
+            padding: 2rem 1.25rem;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
         }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 0.6rem; color: var(--text-main); }
-        .hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto 1.25rem auto; }
-        .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .hero-tag {
+            display: inline-block;
+            background: var(--emerald-light);
+            color: var(--emerald);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .hero h1 { font-size: 2rem; margin-bottom: 0.6rem; color: var(--text-main); line-height: 1.25; }
+        .hero p { color: var(--text-muted); font-size: 1rem; max-width: 700px; margin: 0 auto 1.4rem auto; }
+        .hero-actions { display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap; }
+
+        /* Filter Pills */
+        .filter-bar {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
 
         /* Resource Grid */
-        .section-title { font-size: 1.4rem; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+        .section-title {
+            font-size: 1.35rem;
+            margin: 2rem 0 1.1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .section-count {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: #e0f2fe;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+        }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
+            gap: 1.25rem;
             margin-bottom: 2.5rem;
         }
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 1.4rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
         }
         .badge {
             display: inline-block;
             background: #e0f2fe;
             color: var(--primary-dark);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.65rem;
             text-transform: uppercase;
         }
-        .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
-        .card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem; }
-        .btn-group { display: flex; gap: 0.75rem; }
+        .badge-green {
+            background: var(--emerald-light);
+            color: var(--emerald);
+        }
+        .card h3 { font-size: 1.1rem; margin-bottom: 0.45rem; line-height: 1.35; }
+        .card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+        .btn-group { display: flex; gap: 0.65rem; flex-wrap: wrap; }
         .btn {
             flex: 1;
             text-align: center;
-            padding: 0.6rem 0.9rem;
-            border-radius: 6px;
+            padding: 0.55rem 0.8rem;
+            border-radius: 7px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-decoration: none;
             transition: background 0.2s, border-color 0.2s;
+            white-space: nowrap;
         }
         .btn-primary { background-color: var(--primary); color: #ffffff; }
         .btn-primary:hover { background-color: var(--primary-dark); }
@@ -123,29 +198,29 @@
             background: var(--chai-bg);
             border: 1px solid var(--chai-border);
             border-radius: 12px;
-            padding: 1.75rem 2rem;
+            padding: 1.6rem 1.75rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.25rem;
             flex-wrap: wrap;
-            margin: 3rem 0;
+            margin: 2.5rem 0;
         }
-        .chai-banner-text { flex: 1; min-width: 260px; }
-        .chai-banner-text h3 { font-size: 1.25rem; color: #92400e; margin-bottom: 0.35rem; }
-        .chai-banner-text p { color: #78350f; font-size: 0.95rem; }
+        .chai-banner-text { flex: 1; min-width: 250px; }
+        .chai-banner-text h3 { font-size: 1.2rem; color: #92400e; margin-bottom: 0.35rem; }
+        .chai-banner-text p { color: #78350f; font-size: 0.92rem; }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2.5rem 1.5rem;
+            padding: 2.25rem 1.25rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             border-top: 1px solid var(--border-color);
             background: var(--card-bg);
             margin-top: 3rem;
         }
-        .footer-links { margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+        .footer-links { margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.15rem; flex-wrap: wrap; }
         .footer-links a { color: var(--primary); text-decoration: none; font-weight: 600; }
         .footer-links a:hover { text-decoration: underline; }
     </style>
@@ -153,59 +228,213 @@
 <body>
 
     <header>
-        <a href="https://notes.cellulum.in" class="logo">Cellulum Notes</a>
+        <a href="https://notes.cellulum.in/" class="logo">Cellulum Notes</a>
         <nav class="nav-links">
-            <a href="https://cellulum.in">Main Hub & Bundles</a>
-            <a href="https://notes.cellulum.in" class="active">Free PYQ Vault</a>
+            <a href="https://notes.cellulum.in/">All Articles</a>
+            <a href="https://notes.cellulum.in/resources.html" class="active">Free PYQ Vault</a>
+            <a href="https://cellulum.in/textbook/textbook.html">Interactive Textbook</a>
+            <a href="https://cellulum.in/#bundles">Study Bundles</a>
             <a href="https://topmate.io/cellulum/2410801" class="btn-chai" target="_blank" rel="noopener noreferrer">☕ Buy Us a Chai</a>
         </nav>
     </header>
 
     <main class="container">
         <section class="hero">
-            <h1>CSIR NET Life Sciences Free Resource Vault</h1>
-            <p>Open-access previous year solved questions (PYQs), step-by-step biochemical derivations, and quantitative genetics practice sets.</p>
+            <span class="hero-tag">100% Open-Access Study Vault</span>
+            <h1>CSIR NET Life Sciences Free Resource &amp; Derivation Vault</h1>
+            <p>Complete step-by-step biochemical derivations, solved Part C analytical problems, printable PDF study sheets, and interactive multi-scale simulators.</p>
             <div class="hero-actions">
-                <a href="https://cellulum.in#bundles" class="btn btn-primary" style="flex: 0 1 auto; padding: 0.65rem 1.4rem;">Explore High-Yield Bundles →</a>
-                <a href="https://topmate.io/cellulum/2410801" class="btn-chai" target="_blank" rel="noopener noreferrer">☕ Support & Get Bonus Formula Sheet</a>
+                <a href="https://cellulum.in/#bundles" class="btn btn-primary" style="flex: 0 1 auto; padding: 0.6rem 1.3rem;">📦 Explore High-Yield Bundles →</a>
+                <a href="https://cellulum.in/textbook/textbook.html" class="btn btn-outline" style="flex: 0 1 auto; padding: 0.6rem 1.3rem;">📖 Open 15-Unit Interactive Textbook</a>
+                <a href="https://topmate.io/cellulum/2410801" class="btn-chai" target="_blank" rel="noopener noreferrer">☕ Support &amp; Get Bonus Formula PDF</a>
             </div>
         </section>
 
-        <h2 class="section-title">Free Topic Notes & Solved PYQs</h2>
-        <div class="grid">
-            <div class="card">
+        <!-- Category Filter Bar -->
+        <div class="filter-bar" role="group" aria-label="Filter study resources by CSIR NET Unit">
+            <button class="filter-btn active" onclick="filterResources('all', this)">All Units (13)</button>
+            <button class="filter-btn" onclick="filterResources('biochem', this)">Unit 1 • Biochemistry</button>
+            <button class="filter-btn" onclick="filterResources('molbio', this)">Unit 2–6 • Cell, MolBio &amp; Physio</button>
+            <button class="filter-btn" onclick="filterResources('genetics', this)">Unit 8 • Genetics</button>
+            <button class="filter-btn" onclick="filterResources('ecology', this)">Unit 10 &amp; 13 • Ecology &amp; Methods</button>
+        </div>
+
+        <h2 class="section-title">
+            <span>1. Step-by-Step Derivations &amp; Solved Part C Guides</span>
+            <span class="section-count">10 Printable Study Guides</span>
+        </h2>
+
+        <div class="grid" id="resourceGrid">
+            <!-- 1. Michaelis-Menten -->
+            <div class="card" data-unit="biochem">
                 <div>
                     <span class="badge">Unit 1 • Biochemistry</span>
-                    <h3>Enzyme Kinetics & Thermodynamics</h3>
-                    <p>Step-by-step derivations of Michaelis-Menten equations, inhibition plots, Gibbs free energy, and solved Part C numericals.</p>
+                    <h3>Enzyme Kinetics &amp; Michaelis-Menten Derivations</h3>
+                    <p>Steady-state derivation, Km, Vmax, catalytic efficiency (kcat/Km), Lineweaver-Burk inhibition plots, and worked Part C numericals.</p>
                 </div>
                 <div class="btn-group">
-                    <a href="#" class="btn btn-outline">Read Notes</a>
-                    <a href="#" class="btn btn-primary">Download PDF</a>
+                    <a href="/2026/11/16/enzyme-kinetics-michaelis-menten-derivations.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/16/enzyme-kinetics-michaelis-menten-derivations.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
                 </div>
             </div>
 
-            <div class="card">
+            <!-- 2. Bioenergetics & Redox -->
+            <div class="card" data-unit="biochem">
+                <div>
+                    <span class="badge">Unit 1 • Bioenergetics</span>
+                    <h3>Gibbs Free Energy (ΔG°') &amp; Redox Potentials</h3>
+                    <p>Thermodynamic coupling, reaction spontaneity under cellular concentrations, electron transport ΔE°' calculations, and ATP yield math.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/14/bioenergetics-gibbs-free-energy-redox-potential.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/14/bioenergetics-gibbs-free-energy-redox-potential.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 3. Three-Point Testcross -->
+            <div class="card" data-unit="genetics">
                 <div>
                     <span class="badge">Unit 8 • Genetics</span>
-                    <h3>Linkage Mapping & Pedigree Analysis</h3>
-                    <p>Three-point test cross strategies, recombination frequency shortcuts, probability rules, and CSIR NET solved examples.</p>
+                    <h3>Three-Point Testcross &amp; Linkage Mapping</h3>
+                    <p>Determining gene order, double-crossover identification, map distance (cM), coefficient of coincidence, and interference numericals.</p>
                 </div>
                 <div class="btn-group">
-                    <a href="#" class="btn btn-outline">Read Notes</a>
-                    <a href="#" class="btn btn-primary">Download PDF</a>
+                    <a href="/2026/11/16/three-point-testcross-linkage-mapping.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/16/three-point-testcross-linkage-mapping.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
                 </div>
             </div>
 
-            <div class="card">
+            <!-- 4. Hardy-Weinberg -->
+            <div class="card" data-unit="genetics">
                 <div>
-                    <span class="badge">Unit 10 • Ecology</span>
-                    <h3>Population Growth & Diversity Indices</h3>
-                    <p>Logistic and exponential models, Lincoln-Petersen mark-recapture, Shannon diversity index, and life table calculations.</p>
+                    <span class="badge">Unit 8 &amp; 11 • Population Genetics</span>
+                    <h3>Hardy-Weinberg Equilibrium &amp; Allele Frequencies</h3>
+                    <p>Autosomal recessive carrier frequencies, X-linked trait prevalence, inbreeding depression, and chi-square equilibrium testing.</p>
                 </div>
                 <div class="btn-group">
-                    <a href="#" class="btn btn-outline">Read Notes</a>
-                    <a href="#" class="btn btn-primary">Download PDF</a>
+                    <a href="/2026/11/10/hardy-weinberg-equilibrium-allele-frequency-numericals.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/10/hardy-weinberg-equilibrium-allele-frequency-numericals.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 5. Molecular Cloning & Blue-White Screening -->
+            <div class="card" data-unit="molbio">
+                <div>
+                    <span class="badge">Unit 3 &amp; 13 • Molecular Biology</span>
+                    <h3>Molecular Cloning, Ligation Molar Ratios &amp; Blue-White Screening</h3>
+                    <p>Insert-to-vector ng calculations, lacZ α-complementation, transformation efficiency (CFU/µg), and troubleshooting false-positive white colonies.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/13/molecular-cloning-ligation-blue-white-screening.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/13/molecular-cloning-ligation-blue-white-screening.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 6. Beer-Lambert & qPCR -->
+            <div class="card" data-unit="ecology">
+                <div>
+                    <span class="badge">Unit 13 • Biophysical Methods</span>
+                    <h3>Beer-Lambert Law, Nucleic Acid Purity &amp; Real-Time qPCR (2^-ΔΔCt)</h3>
+                    <p>Molar extinction coefficients, A260/A280 ratios, qPCR amplification efficiency, Ct threshold math, and relative fold-change derivations.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/11/biophysical-methods-beer-lambert-law-qpcr-quantification.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/11/biophysical-methods-beer-lambert-law-qpcr-quantification.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 7. Ecology Population & Mark-Recapture -->
+            <div class="card" data-unit="ecology">
+                <div>
+                    <span class="badge">Unit 10 • Ecology</span>
+                    <h3>Population Growth Models, Mark-Recapture &amp; Diversity Indices</h3>
+                    <p>Exponential vs. logistic dN/dt equations, Lincoln-Petersen population estimates, Shannon-Wiener (H') and Simpson's index problems.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/12/ecology-population-growth-mark-recapture-diversity.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/12/ecology-population-growth-mark-recapture-diversity.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 8. Plant Water Potential -->
+            <div class="card" data-unit="molbio">
+                <div>
+                    <span class="badge">Unit 6 • Plant Physiology</span>
+                    <h3>Water Potential (Ψw), Solute Potential (Ψs = -iCRT) &amp; Turgor</h3>
+                    <p>Van 't Hoff osmotic calculations, plasmolysis threshold, stomatal water transport gradients, and solved CSIR NET numericals.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/09/plant-physiology-water-potential-solute-pressure-numericals.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/09/plant-physiology-water-potential-solute-pressure-numericals.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 9. Immunology Kd & Scatchard Plots -->
+            <div class="card" data-unit="molbio">
+                <div>
+                    <span class="badge">Unit 4 • Immunology &amp; Signaling</span>
+                    <h3>Receptor-Ligand Affinity (Kd) &amp; Scatchard Plot Analysis</h3>
+                    <p>Equilibrium dissociation constants, Bmax estimation, monoclonal vs. polyclonal valency slopes, and competitive binding curves.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/08/immunology-receptor-ligand-kd-scatchard-plot-derivations.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/08/immunology-receptor-ligand-kd-scatchard-plot-derivations.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+
+            <!-- 10. Nernst Equation & Membrane Potential -->
+            <div class="card" data-unit="molbio">
+                <div>
+                    <span class="badge">Unit 2 &amp; 7 • Cell &amp; Neurophysiology</span>
+                    <h3>Nernst Equation, Goldman-Hodgkin-Katz &amp; Action Potentials</h3>
+                    <p>Equilibrium ion potentials (EK, ENa), resting membrane voltage calculations, patch-clamp reversal potential, and ion channel kinetics.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/2026/11/07/cell-physiology-nernst-equation-membrane-potential-derivations.html" class="btn btn-outline">📖 Read Notes</a>
+                    <a href="/2026/11/07/cell-physiology-nernst-equation-membrane-potential-derivations.html?print=1" target="_blank" class="btn btn-primary">🖨️ Print / Save PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">
+            <span>2. Interactive Textbook Modules &amp; Practice Simulators</span>
+            <span class="section-count">15 Interactive Chapters</span>
+        </h2>
+
+        <div class="grid">
+            <div class="card" data-unit="biochem">
+                <div>
+                    <span class="badge badge-green">Interactive Chapter • Mod 01–03</span>
+                    <h3>Bioenergetics, Enzyme Kinetics &amp; Metabolic Flux</h3>
+                    <p>Launch interactive Schaum's-style quantitative outlines with live sliders for ΔG, Michaelis-Menten curves, and oxidative phosphorylation.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="https://cellulum.in/textbook/textbook.html?module=TextBook1" class="btn btn-outline">Launch Mod 01</a>
+                    <a href="https://cellulum.in/textbook/textbook.html?module=TextBook2" class="btn btn-primary">Launch Mod 02</a>
+                </div>
+            </div>
+
+            <div class="card" data-unit="molbio">
+                <div>
+                    <span class="badge badge-green">Interactive Chapter • Mod 04–08</span>
+                    <h3>Replication, Operon Logic, PCR &amp; CRISPR-Cas9</h3>
+                    <p>Explore high-resolution molecular schematics, lac/trp merodiploid tables, and interactive PCR thermal cycling simulators.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="https://cellulum.in/textbook/textbook.html?module=TextBook5" class="btn btn-outline">Launch Mod 05</a>
+                    <a href="https://cellulum.in/textbook/textbook.html?module=TextBook8" class="btn btn-primary">Launch Mod 08</a>
+                </div>
+            </div>
+
+            <div class="card" data-unit="ecology">
+                <div>
+                    <span class="badge badge-green">Interactive Chapter • Mod 10–15</span>
+                    <h3>Genetics, Population Ecology &amp; Biophysical Spectroscopy</h3>
+                    <p>Practice interactive Lotka-Volterra phase planes, pedigree probability trees, and UV-Vis/CD/NMR analytical problem sets.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="https://cellulum.in/textbook/textbook.html?module=TextBook10" class="btn btn-outline">Launch Mod 10</a>
+                    <a href="https://cellulum.in/textbook/textbook.html?module=TextBook13" class="btn btn-primary">Launch Mod 13</a>
                 </div>
             </div>
         </div>
@@ -213,8 +442,8 @@
         <!-- Support / Tip Jar Callout -->
         <section class="chai-banner">
             <div class="chai-banner-text">
-                <h3>☕ Fuel Cellulum’s Study Guides & Get a Bonus Formula Sheet!</h3>
-                <p>Found these free derivations and PYQ solutions helpful? Buy us a chai via UPI on Topmate and get instant access to our printable <strong>1-Page CSIR NET Quantitative Formula & Equations Cheat Sheet (PDF)</strong>.</p>
+                <h3>☕ Fuel Cellulum’s Study Guides &amp; Get the 1-Page Master Formula PDF!</h3>
+                <p>Found these open-access derivations and PYQ solutions helpful? Buy us a chai via UPI on Topmate and get instant download access to our printable <strong>1-Page CSIR NET Quantitative Formula &amp; Equations Cheat Sheet (PDF)</strong>.</p>
             </div>
             <a href="https://topmate.io/cellulum/2410801" class="btn-chai" style="padding: 0.75rem 1.4rem; font-size: 0.95rem;" target="_blank" rel="noopener noreferrer">
                 ☕ Buy Us a Chai (Get Bonus PDF)
@@ -223,13 +452,26 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Cellulum.in — Free Life Sciences Education & Research Vault.</p>
+        <p>&copy; 2026 Cellulum.in — Open-Access Life Sciences Observatory &amp; Quantitative Study Vault.</p>
         <div class="footer-links">
-            <a href="https://cellulum.in">Cellulum Main Site</a>
-            <a href="https://notes.cellulum.in">Resource Vault</a>
+            <a href="https://cellulum.in/">Cellulum Observatory</a>
+            <a href="https://cellulum.in/textbook/textbook.html">Interactive Textbook</a>
+            <a href="https://notes.cellulum.in/">All Study Notes</a>
+            <a href="https://notes.cellulum.in/about.html">About Us</a>
+            <a href="https://notes.cellulum.in/privacy.html">Privacy Policy</a>
+            <a href="https://notes.cellulum.in/contact.html">Contact</a>
             <a href="https://topmate.io/cellulum/2410801" target="_blank" rel="noopener noreferrer">☕ Support Us on Topmate</a>
         </div>
     </footer>
 
+    <script>
+        function filterResources(unit, btnEl) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btnEl.classList.add('active');
+            document.querySelectorAll('#resourceGrid .card').forEach(card => {
+                card.style.display = (unit === 'all' || card.getAttribute('data-unit') === unit) ? 'flex' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
